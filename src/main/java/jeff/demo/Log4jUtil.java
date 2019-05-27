@@ -21,7 +21,7 @@ public class Log4jUtil {
                 FileAppender fileAppender = new FileAppender(
                         new PatternLayout(pattern), logfile,true);
                 fileAppender.setName(logFileName);
-                fileAppender.addFilter(new RunIdFilter(logFileName));
+                fileAppender.addFilter(new MDCFilter(logFileName));
                 fileAppender.setImmediateFlush(true);
 
                 logger.addAppender(fileAppender);

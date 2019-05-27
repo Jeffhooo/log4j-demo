@@ -4,19 +4,19 @@ package jeff.demo;
 import org.apache.log4j.spi.Filter;
 import org.apache.log4j.spi.LoggingEvent;
 
-public class RunIdFilter extends Filter {
+public class MDCFilter extends Filter {
 
-    private final String runId;
+    private final String key;
 
-    public RunIdFilter(String runId) {
-        this.runId = runId;
+    public MDCFilter(String key) {
+        this.key = key;
     }
 
     @Override
     public int decide(LoggingEvent event) {
-        Object mdc = event.getMDC(Log4jUtil.DISCRIMINATOR_KEY);
+        Object eventKey = event.getMDC(Log4jUtil.DISCRIMINATOR_KEY);
 
-        if (runId.equals(mdc)) {
+        if (key.equals(eventKey)) {
             return Filter.ACCEPT;
         }
 
