@@ -1,0 +1,3 @@
+15:45:25.132 [main] INFO demo.Log4jDemo: main: I am fine.
+15:45:25.134 [main] WARN demo.Log4jDemo: main: I love programming.
+15:45:25.136 [main] ERROR demo.Log4jDemo: main: I am programming.
